@@ -1,0 +1,407 @@
+:root {
+  --primary: #1f3a5f;     /* deep blue */
+  --secondary: #3b82f6;   /* blue */
+  --accent: #10b981;      /* green */
+  --danger: #ef4444;      /* red */
+  --warning: #f59e0b;     /* amber */
+  --text: #1f2937;        /* slate */
+  --muted: #6b7280;       /* gray */
+  --bg: #f4f7fb;          /* soft blue-gray */
+  --card: #ffffff;        /* white */
+  --border: #e5e7eb;      /* light border */
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  padding: 20px;
+  color: var(--text);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Headings */
+h2 {
+  margin-bottom: 18px;
+  color: var(--primary);
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+/* Optional header support (won't affect if not in HTML) */
+.app-header {
+  background: linear-gradient(135deg, var(--primary), #274c77);
+  color: #fff;
+  padding: 18px 24px;
+  border-radius: var(--radius);
+  margin-bottom: 18px;
+  box-shadow: var(--shadow);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  font-size: 34px;
+  line-height: 1;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.subtitle {
+  font-size: 13px;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+/* Cards */
+.login-container,
+.pos-container,
+.store-selection {
+  max-width: 950px;
+  margin: 18px auto;
+  background: var(--card);
+  padding: 28px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(229, 231, 235, 0.75);
+}
+
+/* Form spacing */
+.form-row {
+  margin-bottom: 14px;
+}
+
+/* Labels (works with your existing inline labels) */
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="number"],
+input[type="password"],
+select {
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  width: 100%;
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[readonly] {
+  background-color: #f8fafc;
+  color: #334155;
+}
+
+/* Focus styling */
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Buttons (base) */
+button {
+  padding: 12px 14px;
+  background: var(--secondary);
+  color: #fff;
+  border: none;
+  font-size: 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.05s ease, background 0.2s ease, opacity 0.2s ease;
+  width: 100%;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+button:hover {
+  background: #2563eb;
+}
+
+button:active {
+  transform: scale(0.99);
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Inline action buttons (Submit/Clear) */
+#submit-all-btn,
+#clear-all-btn {
+  display: inline-block;
+  width: auto;
+  margin: 6px 6px 0 0;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+/* Keep strong visual differentiation */
+#submit-all-btn {
+  background: var(--accent);
+}
+#submit-all-btn:hover {
+  background: #059669;
+}
+
+#clear-all-btn {
+  background: var(--warning);
+}
+#clear-all-btn:hover {
+  background: #d97706;
+}
+
+/* Login error */
+#login-error {
+  color: var(--danger);
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 800;
+}
+
+/* Store selection */
+.store-selection {
+  text-align: center;
+}
+
+.store-selection button {
+  margin: 10px;
+  padding: 14px 28px;
+  font-size: 15px;
+  width: auto;
+  border-radius: 12px;
+}
+
+.active-store {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+/* Tables (general) */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 18px;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+
+th,
+td {
+  padding: 12px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  font-size: 14px;
+}
+
+th {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 900;
+}
+
+tbody tr:hover {
+  background: #f1f5f9;
+}
+
+/* Sales table remove button */
+#sales-table button {
+  background: var(--danger);
+  padding: 7px 10px;
+  font-size: 14px;
+  width: auto;
+  border-radius: 10px;
+}
+
+#sales-table button:hover {
+  background: #b91c1c;
+}
+
+/* =========================
+   Stock Modal + Adjustment Modal Overlay
+   (Your HTML uses inline styles; these enhance it)
+========================= */
+#stock-modal,
+#stock-adjustment-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.55);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+}
+
+#stock-modal > div,
+#stock-adjustment-modal > div {
+  border-radius: 16px !important;
+  box-shadow: var(--shadow) !important;
+  border: 1px solid rgba(229, 231, 235, 0.75) !important;
+}
+
+/* Stock modal table */
+#stock-modal table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+#stock-modal th {
+  background: var(--primary);
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+}
+
+#stock-modal td {
+  padding: 10px;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+#stock-modal tr:hover {
+  background: #f8fafc;
+}
+
+/* Stock search */
+#stock-search {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 15px;
+}
+
+#stock-search:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* =========================
+   Stock Adjustment Styles
+========================= */
+.adjustment-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.adjustment-table th {
+  background-color: #f8fafc;
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 2px solid #dee2e6;
+  font-weight: 900;
+  color: #334155;
+}
+
+.adjustment-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.product-name {
+  font-weight: 900;
+  color: var(--primary);
+}
+
+.stock-info {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.adjustment-select,
+.unit-select {
+  width: 100%;
+  padding: 9px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.quantity-input {
+  width: 90px;
+  padding: 9px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.new-stock {
+  font-weight: 900;
+  color: var(--accent);
+}
+
+.remove-btn {
+  background-color: var(--danger);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  width: auto;
+}
+
+.remove-btn:hover {
+  background-color: #b91c1c;
+}
+
+/* Suggestions dropdown */
+#adjustment-suggestions {
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.suggestion-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.suggestion-item:hover {
+  background-color: #f8fafc;
+}
+
+/* Optional footer support */
+.app-footer {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
